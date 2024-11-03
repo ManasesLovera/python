@@ -17,7 +17,11 @@ with open("1.1.output.csv", "w", newline="") as file:
     writer = csv.writer(file)
     writer.writerows(data)
 
-# Students
+# Project 1: Simple CSV Data Processor
+
+"""
+Objective: Read a CSV file containing a list of students with names and grades, then calculate the average grade.
+"""
 total_grade = 0
 count = 0
 
