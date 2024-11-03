@@ -16,14 +16,24 @@ with open("1.2.output.txt", "a") as file:
 
 """
 Objective: Read a text file with sentences and count the occurrences of each word.
+
+Extend Project 2: Ignore common stop words like "the," "is," "a," etc., from counting.
 """
 
 from collections import Counter
 
+# Define common stop words to exclude
+stop_words = {"the", "is", "a", "an", "and", "of", "to", "in", "on", "for", "with"}
+
+# Read file and split words
 with open("1.2.example.txt", "r") as file:
     content = file.read()
     words = content.lower().split()
 
-word_counts = Counter(words)
+# Filter out stop words
+filtered_words = [word for word in words if word not in stop_words]
+
+# Count word occurences
+word_counts = Counter(filtered_words)
 for word, count in word_counts.items():
     print(f"{word}: {count}")

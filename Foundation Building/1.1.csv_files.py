@@ -21,17 +21,35 @@ with open("1.1.output.csv", "w", newline="") as file:
 
 """
 Objective: Read a CSV file containing a list of students with names and grades, then calculate the average grade.
+
+Modify Project 1: Add functionality to find the highest and lowest grades.
 """
 total_grade = 0
 count = 0
+highest_grade = float('-inf')
+lowest_grade = float('inf')
+highest_student = ""
+lowest_student = ""
 
 with open('1.1.students.csv','r') as file:
     reader = csv.reader(file)
     next(reader) # Skip header row
+
     for row in reader:
         name, grade = row
-        total_grade += int(grade)
+        grade = int(grade)
+        total_grade += grade
         count += 1
+
+        if grade > highest_grade:
+            highest_grade = grade
+            highest_student = name
+
+        if grade < lowest_grade:
+            lowest_grade = grade
+            lowest_student = name
 
 average_grade = total_grade / count
 print('Average grade:', average_grade)
+print(f"Highest = Student: {highest_student}, Grade: {highest_grade}")
+print(f"Lowest = Student: {lowest_student}, Grade: {lowest_grade}")
