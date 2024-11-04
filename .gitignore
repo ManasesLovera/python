@@ -1,0 +1,27 @@
+# Ignore the virtual environment folder
+venv/
+
+# Byte-compiled and cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# pip dependency file that logs packages during install
+pip-log.txt
+
+# Ignore database files
+*.sqlite3
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Ignore IDE or editor configuration files
+.vscode/
+.idea/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore logs
+*.log
