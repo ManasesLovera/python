@@ -1,6 +1,9 @@
 # Ignore the virtual environment folder
 venv/
 
+# Ignore environment varibles files
+.env
+
 # Byte-compiled and cache files
 __pycache__/
 *.pyc

@@ -1,5 +1,5 @@
-import psycopg2
-from psycopg2 import sql
+import psycopg2 # type: ignore
+from psycopg2 import sql # type: ignore
 
 # Database connection details
 db_config = {
