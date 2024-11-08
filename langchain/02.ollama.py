@@ -9,7 +9,7 @@ from langchain_core.prompts import ChatPromptTemplate #type: ignore
 load_dotenv()
 
 llm = OllamaLLM(
-    base_url=os.getenv("CHATOLLAMA_BASE_URL"), 
+    base_url=os.getenv("OLLAMA_BASE_URL"), 
     model="mistral:7b-instruct-v0.2-q2_K", # llama3.1
     temperature=0
 )
