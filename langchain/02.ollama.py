@@ -5,6 +5,9 @@ from langchain_ollama.llms import OllamaLLM #type: ignore
 from langchain_core.output_parsers import StrOutputParser #type: ignore
 from langchain_core.prompts import ChatPromptTemplate #type: ignore
 
+# Load environment variables from the .env file
+load_dotenv()
+
 llm = OllamaLLM(
     base_url=os.getenv("CHATOLLAMA_BASE_URL"), 
     model="mistral:7b-instruct-v0.2-q2_K", # llama3.1
