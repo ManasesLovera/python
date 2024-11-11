@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv # type: ignore
 from langchain_openai import ChatOpenAI # type: ignore
-from langchain_core.pydantic_v1 import BaseModel, Field # type: ignore
+from pydantic import BaseModel, Field # type: ignore
 
 # Load environment variables from the .env file
 load_dotenv()
@@ -23,4 +23,4 @@ structured_llm = llm.with_structured_output(Joke)
 
 joke = structured_llm.invoke("Tell me a joke about cats")
 
-print(f"{joke.setup} {joke.punchline} | Rating: {joke:rating}")
+print(f"{joke.setup} {joke.punchline} | Rating: {joke.rating}")
