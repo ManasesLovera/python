@@ -12,6 +12,9 @@ llm = ChatOpenAI(
 )
 
 from langchain_core.prompts import ChatPromptTemplate #type: ignore
+from pydantic import BaseModel, Field, ValidationError # type: ignore
+import json
+from jsonschema.validators import Draft202012Validator # type: ignore
 
 # Text extracted from OCR (Optical Character Recognition)
 
@@ -70,3 +73,81 @@ passport = extr_runnable.invoke({"text": ocr_extracted_text})
 
 # Print the extracted passport information
 print(passport)
+
+class ExtractorDefinition(BaseModel):
+    """Define an information extractor to be used in an information extraction system."""
+
+    json_schema: str = Field(
+        ...,
+        description=(
+            "JSON Schema that describes the entity /"
+            "information that should be extracted. "
+            "This schema is specified in JSON Schema format. "
+        )
+    )
+
+SUGGEST_PROMPT = ChatPromptTemplate.from_messages(
+    [
+        (
+            "system",
+            "You are are an expert ontologist and have been asked to help a user "
+            "define an information extractor.The user will describe an entity, "
+            "a topic or a piece of information that they would like to extract from "
+            "text. Based on the user input, you are to provide a schema and "
+            "description for the extractor. The schema should be a JSON Schema that "
+            "describes the entity or information to be extracted. information to be "
+            "extracted. Make sure to include title and description for all the "
+            "attributes in the schema. The JSON Schema should describe a top level "
+            "object. The object MUST have a title and description. Title must be in snake_case."
+            "Make the description valid JSON schema values or do not add them at all."
+            "Unless otherwise stated all entity properties in the schema should be considered optional.",
+        ),
+        ("human", "{input}")
+    ]
+)
+
+suggestion_chain = SUGGEST_PROMPT | llm.with_structured_output(
+    schema=ExtractorDefinition
+).with_config({"run_name": "suggest"})
+
+# This description will be generated from iterating over the elements within a set of datapoints for a given tag.
+# There will be an attempt of keeping track of tokens to avoid adding information that might truncate the properties.
+# Descriptions will be eliminated if a threshold is met
+description = """
+    Extract the following information:
+    1. FULLNAME: A fullname is the complete legal name of an individual, typically including the first name, middle name(s), and last name. It represents a given and family names in full.
+    2. PASSPORT NUMBER: A passport number is a unique identifier assigned to a passport, used to verify their identity and nationality. It is issued by the government of a country and is essential for international travel documentation and security checks.
+    3. EXPIRATION DATE: An expiration date is the specific date after which a product or document is no longer valid or safe to use. It indicates the end of the period during which the item can be expected to function properly or remain effective, and is often formatted in ISO 8601 format (YYYY-MM-DD) for standardization and clarity.
+    4. BIRTH DATE: A birth date is the specific date on which an individual was born, marking the beginning of their life. It is often formatted in ISO 8601 format (YYYY-MM-DD) for consistency and precision in records and documentation.
+    5. NATIONALITY
+    """
+suggested_json_schema = None
+
+try:
+    suggested_json_schema = suggestion_chain.invoke({
+        "input": description
+    })
+except ValidationError as e:
+    print(e.errors()[0])
+    suggested_json_schema = None
+
+# Validate the suggested JSON schema
+if suggested_json_schema:
+  json_schema = json.loads(suggested_json_schema.json_schema)
+  print(json.dumps(json_schema, indent=2))
+
+  # Check if the schema itself is valid
+  Draft202012Validator.check_schema(json_schema)
+else:
+  print("Failed to generate schema")
+
+"""Structured extraction with a JSON Schema"""
+
+if json_schema:
+   extr_runnable = (prompt_template | llm.with_structured_output(json_schema)).with_config({
+      "run_name": "extraction"
+   })
+
+   passport = extr_runnable.invoke({"text": ocr_extracted_text})
+
+   print(f"Passport number: {passport['passport_number']}")

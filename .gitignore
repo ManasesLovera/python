@@ -28,3 +28,5 @@ Thumbs.db
 
 # Ignore logs
 *.log
+
+langchain/insurance_coverage.py
