@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
-from fastapi.responses import FileResponse
-from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse # type: ignore
+from fastapi.middleware.cors import CORSMiddleware # type: ignore
 import os
 import mimetypes
 
