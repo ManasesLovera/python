@@ -1,4 +1,5 @@
 # Generic types with type parameters
+from typing import Optional
 
 def process_items(items: list[str]):
     for item in items:
@@ -14,3 +15,11 @@ def process_items(prices: dict[str, float]):
 
 def process_item(item: int | str):
     print(item)
+
+def say_hi(name: Optional[str] = None):
+    if name is not None:
+        print(f"Hey {name}!")
+    else:
+        print("No name provided")
+
+say_hi()
