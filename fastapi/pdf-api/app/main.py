@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 import os
@@ -16,7 +16,7 @@ app.add_middleware(
 )
 
 # Directory where PDFs are stored
-PDF_DIR = os.path.join(os.path.dirname(__file__), "static")
+FILE_DIR = os.path.join(os.path.dirname(__file__), "static")
 
 @app.get("/")
 def root():
@@ -25,7 +25,7 @@ def root():
 # Endpoint to VIEW the PDF (inline)
 @app.get("/file/view/{filename}")
 def view_file(filename: str):
-    file_path = os.path.join(PDF_DIR, filename)
+    file_path = os.path.join(FILE_DIR, filename)
 
     if not os.path.exists(file_path):
         raise HTTPException(status_code=404, detail="File not found")
@@ -40,7 +40,7 @@ def view_file(filename: str):
 # Endpoint to DOWNLOAD the PDF
 @app.get("/file/download/{filename}")
 def download_file(filename: str):
-    file_path = os.path.join(PDF_DIR, filename)
+    file_path = os.path.join(FILE_DIR, filename)
 
     if not os.path.exists(file_path):
         raise HTTPException(status_code=404, detail="File not found")
@@ -58,3 +58,22 @@ def download_file(filename: str):
             "Content-Disposition": f"attachment; filename={filename}"
         }
     )
+
+@app.get("/public/{filename}")
+def serve_file(filename: str, download: bool = Query(False)):
+    file_path = os.path.join(FILE_DIR, filename)
+
+    if not os.path.exists(file_path):
+        raise HTTPException(status_code=404, detail="File not found")
+
+    # Guess MIME type dynamically
+    media_type, _ = mimetypes.guess_type(file_path)
+    if not media_type:
+        media_type = "application/octet-stream"  # Fallback for unknown types
+
+    # Force download if ?download=true
+    headers = {}
+    if download:
+        headers["Content-Disposition"] = f"attachment; filename={filename}"
+
+    return FileResponse(file_path, media_type=media_type, headers=headers)
