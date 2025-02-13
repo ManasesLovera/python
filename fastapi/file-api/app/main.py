@@ -60,7 +60,7 @@ def download_file(filename: str):
     )
 
 @app.get("/public/{filename}")
-def serve_file(filename: str, download: bool = Query(False)):
+def serve_file(filename: str, download: bool = Query(False)): # type: ignore
     file_path = os.path.join(FILE_DIR, filename)
 
     if not os.path.exists(file_path):
