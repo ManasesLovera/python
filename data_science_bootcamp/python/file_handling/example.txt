@@ -1,0 +1,4 @@
+THIS IS THE CONTENT OF THE FILE
+What's UP!?This is an appended line.
+
+This is an appended line.

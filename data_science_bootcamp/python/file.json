@@ -1,0 +1,50 @@
+{
+    "ForcedRefresh": null,
+    "Id": "75371ab4-337e-4a68-8174-3f5e6ce6b857",
+    "Index": "alfred-93fe423e-f36b-1410-8174-003a66f122ec-semantic-dbg",
+    "PrimaryTerm": 3,
+    "Result": 4,
+    "SeqNo": 41,
+    "Shards": {
+        "Failed": 0,
+        "Failures": null,
+        "Skipped": null,
+        "Successful": 2,
+        "Total": 2
+    },
+    "Version": 1,
+    "ElasticsearchWarnings": [],
+    "DebugInformation": "Valid Elasticsearch response built from a successful (201) low level call on PUT: /alfred-93fe423e-f36b-1410-8174-003a66f122ec-semantic-dbg/_doc/75371ab4-337e-4a68-8174-3f5e6ce6b857\r\n# Audit trail of this API call:\r\n - [1] HealthyResponse: Node: https://d99dac2b2d4846abb37eca89a911e97c.us-east-1.aws.found.io/ Took: 00:00:01.1953944\r\n# Request:\r\n<Request stream not captured or already read to completion by serializer. Set DisableDirectStreaming() on TransportConfiguration to force it to be set on the response.>\r\n# Response:\r\n<Response stream not captured or already read to completion by serializer. Set DisableDirectStreaming() on TransportConfiguration to force it to be set on the response.>\r\n",
+    "IsValidResponse": true,
+    "ElasticsearchServerError": null,
+    "ApiCallDetails": {
+        "AuditTrail": [
+            {
+                "Event": 10,
+                "Node": {
+                    "Features": [],
+                    "Settings": {},
+                    "Id": null,
+                    "Name": null,
+                    "Uri": "https://d99dac2b2d4846abb37eca89a911e97c.us-east-1.aws.found.io:443/",
+                    "IsAlive": true,
+                    "DeadUntil": "0001-01-01T00:00:00+00:00",
+                    "FailedAttempts": 0,
+                    "IsResurrected": true
+                },
+                "PathAndQuery": "/alfred-93fe423e-f36b-1410-8174-003a66f122ec-semantic-dbg/_doc/75371ab4-337e-4a68-8174-3f5e6ce6b857",
+                "Ended": "2025-05-25T22:36:58.3797912+00:00",
+                "Started": "2025-05-25T22:36:57.1843968+00:00",
+                "Exception": null
+            }
+        ],
+        "DebugInformation": "Successful (201) low level call on PUT: /alfred-93fe423e-f36b-1410-8174-003a66f122ec-semantic-dbg/_doc/75371ab4-337e-4a68-8174-3f5e6ce6b857\r\n# Audit trail of this API call:\r\n - [1] HealthyResponse: Node: https://d99dac2b2d4846abb37eca89a911e97c.us-east-1.aws.found.io/ Took: 00:00:01.1953944\r\n# Request:\r\n<Request stream not captured or already read to completion by serializer. Set DisableDirectStreaming() on TransportConfiguration to force it to be set on the response.>\r\n# Response:\r\n<Response stream not captured or already read to completion by serializer. Set DisableDirectStreaming() on TransportConfiguration to force it to be set on the response.>\r\n",
+        "HttpMethod": 2,
+        "HttpStatusCode": 201,
+        "OriginalException": null,
+        "RequestBodyInBytes": null,
+        "ResponseBodyInBytes": null,
+        "HasSuccessfulStatusCode": true,
+        "Uri": "https://d99dac2b2d4846abb37eca89a911e97c.us-east-1.aws.found.io/alfred-93fe423e-f36b-1410-8174-003a66f122ec-semantic-dbg/_doc/75371ab4-337e-4a68-8174-3f5e6ce6b857"
+    }
+}
