@@ -1,0 +1,60 @@
+Transaction ID,Date,Product Category,Product Name,Units Sold,Unit Price,Total Revenue,Region,Payment Method
+1001,2023-01-01,Electronics,Smartphone,10,300,3000,North,Credit Card
+1002,2023-01-02,Home Appliances,Vacuum Cleaner,5,150,750,South,Debit Card
+1003,2023-01-03,Furniture,Office Chair,8,200,1600,East,Cash
+1004,2023-01-04,Electronics,Laptop,3,1000,3000,West,Paypal
+1005,2023-01-05,Home Appliances,Refrigerator,2,1200,2400,North,Credit Card
+1006,2023-01-06,Furniture,Desk,4,400,1600,South,Debit Card
+1007,2023-01-07,Electronics,Tablet,6,250,1500,East,Cash
+1008,2023-01-08,Home Appliances,Microwave,7,200,1400,West,Paypal
+1009,2023-01-09,Furniture,Sofa,1,1500,1500,North,Credit Card
+1010,2023-01-10,Electronics,Smartwatch,12,200,2400,South,Debit Card
+1011,2023-01-11,Home Appliances,Air Conditioner,4,800,3200,East,Cash
+1012,2023-01-12,Furniture,Bookshelf,3,300,900,West,Paypal
+1013,2023-01-13,Electronics,Headphones,15,100,1500,North,Credit Card
+1014,2023-01-14,Home Appliances,Blender,10,80,800,South,Debit Card
+1015,2023-01-15,Furniture,Coffee Table,5,250,1250,East,Cash
+1016,2023-01-16,Electronics,Smart TV,2,1500,3000,West,Paypal
+1017,2023-01-17,Home Appliances,Washing Machine,3,700,2100,North,Credit Card
+1018,2023-01-18,Furniture,Dining Table,1,1200,1200,South,Debit Card
+1019,2023-01-19,Electronics,Camera,4,600,2400,East,Cash
+1020,2023-01-20,Home Appliances,Toaster,8,50,400,West,Paypal
+1021,2023-01-21,Furniture,Armchair,6,400,2400,North,Credit Card
+1022,2023-01-22,Electronics,Monitor,5,300,1500,South,Debit Card
+1023,2023-01-23,Home Appliances,Electric Kettle,9,60,540,East,Cash
+1024,2023-01-24,Furniture,Bed Frame,2,800,1600,West,Paypal
+1025,2023-01-25,Electronics,Wireless Speaker,11,150,1650,North,Credit Card
+1026,2023-01-26,Home Appliances,Hair Dryer,7,40,280,South,Debit Card
+1027,2023-01-27,Furniture,Nightstand,4,200,800,East,Cash
+1028,2023-01-28,Electronics,Game Console,3,400,1200,West,Paypal
+1029,2023-01-29,Home Appliances,Electric Stove,5,500,2500,North,Credit Card
+1030,2023-01-30,Furniture,Recliner,2,600,1200,South,Debit Card
+1031,2023-01-31,Electronics,Projector,1,2000,2000,East,Cash
+1032,2023-02-01,Home Appliances,Water Heater,4,300,1200,West,Paypal
+1033,2023-02-02,Furniture,Ottoman,6,150,900,North,Credit Card
+1034,2023-02-03,Electronics,Soundbar,8,250,2000,South,Debit Card
+1035,2023-02-04,Home Appliances,Electric Grill,3,100,300,East,Cash
+1036,2023-02-05,Furniture,Console Table,5,350,1750,West,Paypal
+1037,2023-02-06,Electronics,Smart Home Hub,10,150,1500,North,Credit Card
+1038,2023-02-07,Home Appliances,Food Processor,2,400,800,South,Debit Card
+1039,2023-02-08,Furniture,Sectional Sofa,1,2000,2000,East,Cash
+1040,2023-02-09,Electronics,VR Headset,4,600,2400,West,Paypal
+1041,2023-02-10,Home Appliances,Electric Fan,6,70,420,North,Credit Card
+1042,2023-02-11,Furniture,Armchair,3,500,1500,South,Debit Card
+1043,2023-02-12,Electronics,Smart Lock,5,250,1250,East,Cash
+1044,2023-02-13,Home Appliances,Electric Blanket,8,80,640,West,Paypal
+1045,2023-02-14,Furniture,Bar Stool,7,100,700,North,Credit Card
+1046,2023-02-15,Electronics,Smart Thermostat,2,350,700,South,Debit Card
+1047,2023-02-16,Home Appliances,Electric Toothbrush,9,30,270,East,Cash
+1048,2023-02-17,Furniture,Storage Ottoman,4,200,800,West,Paypal
+1049,2023-02-18,Electronics,Smart Speaker,11,120,1320,North,Credit Card
+1050,2023-02-19,Home Appliances,Electric Pressure Cooker,5,150,750,South,Debit Card
+1051,2023-02-20,Furniture,Accent Chair,3,400,1200,East,Cash
+1052,2023-02-21,Electronics,Smart Light Bulb,6,20,120,West,Paypal
+1053,2023-02-22,Home Appliances,Electric Rice Cooker,2,200,400,North,Credit Card
+1054,2023-02-23,Furniture,Console Cabinet,1,800,800,South,Debit Card
+1055,2023-02-24,Electronics,Smartwatch,4,250,1000,East,Cash
+1056,2023-02-25,Home Appliances,Electric Juicer,7,60,420,West,Paypal
+1057,2023-02-26,Furniture,Bookcase,5,300,1500,North,Credit Card
+1058,2023-02-27,Electronics,Wireless Earbuds,3,150,450,South,Debit Card
+1059,2023-02-28,Home Appliances,Electric Grill Pan,8,100,800,East,Cash
