@@ -1,0 +1,9 @@
+Date,Category,Value,Product,Sales,Region
+2023-01-01,Electronics,1000,Smartphone,500,North
+2023-01-02,Clothing,500,T-shirt,300,South
+2023-01-03,Electronics,1500,Laptop,700,East
+2023-01-04,Home,,Vacuum Cleaner,400,West
+2023-01-05,Clothing,800,Jacket,600,North
+2023-01-06,Electronics,1200,Tablet,450,South
+2023-01-07,Home,1800,Refrigerator,800,East
+2023-01-08,Clothing,,Jeans,350,West
