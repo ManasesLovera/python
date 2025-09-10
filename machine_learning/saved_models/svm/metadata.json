@@ -1,0 +1,28 @@
+{
+  "model_name": "svm",
+  "training_samples": 708,
+  "num_classes": 7,
+  "classes": [
+    "Historia Clínica",
+    "Indicación Médica de Estudios",
+    "Informe de Radiografía",
+    "Informe de Resonancia Magnética",
+    "Informe de Sonografía",
+    "Informe de Tomografía",
+    "Resultados de Laboratorio"
+  ],
+  "accuracy": 0.9971751412429378,
+  "vectorizer_params": {
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_df": 0.9
+  },
+  "model_params": {
+    "loss": "hinge",
+    "class_weight": "balanced",
+    "random_state": 42
+  }
+}
